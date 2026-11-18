@@ -75,13 +75,13 @@ public class MinecraftDownloader {
                       @NonNull String realVersion,
                       @NonNull AsyncMinecraftDownloader.DoneListener listener) {
         if(activity != null){
-            isLocalProfile = Tools.isLocalProfile(activity);
-            isOnline = Tools.isOnline(activity);
+            isLocalProfile = false
+            isOnline = true
             Tools.switchDemo(Tools.isDemoProfile(activity));
 
         } else {
-            isLocalProfile = true;
-            Tools.switchDemo(true);
+            isLocalProfile = false;
+
         }
 
         sExecutorService.execute(() -> {
